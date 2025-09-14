@@ -1,0 +1,5 @@
+gradio
+pymongo
+openai
+python-dotenv
+PyMuPDF
