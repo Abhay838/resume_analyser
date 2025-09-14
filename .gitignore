@@ -16,3 +16,5 @@ venv/
 # System
 .DS_Store
 Thumbs.db
+
+firebase-key.json

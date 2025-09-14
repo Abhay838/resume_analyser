@@ -10,8 +10,13 @@ from firebase_admin import credentials, firestore
 # Load API key
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Firebase Admin Setup
-cred = credentials.Certificate("firebase-key.json")  # 🔑 Your Firebase Admin SDK JSON
+# Load Firebase credentials from environment variable
+firebase_key = os.getenv("FIREBASE_KEY")
+if not firebase_key:
+    raise ValueError("FIREBASE_KEY not set in environment variables")
+
+cred_dict = json.loads(firebase_key)
+cred = credentials.Certificate(cred_dict)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
