@@ -1,5 +1,10 @@
+fastapi
+uvicorn[standard]
+gunicorn
+
 gradio
 pymongo
 openai
 python-dotenv
 PyMuPDF
+firebase-admin
